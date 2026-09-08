@@ -174,6 +174,11 @@ void MvFileFormatMap_t::InitStrFileFormatMap() {
   myStrFileFormatMap["radioss2024"] = FF_D00_2024;
   myStrFileFormatMap["radioss2025"] = FF_D00_2025;
   myStrFileFormatMap["radioss2026"] = FF_D00_2026;
+  // The starter builds its profile name from CODVERS (starter0.F), which is
+  // 2612, and hm_cfg_files ships a matching radioss2612 directory. Without
+  // this entry MV_get_file_format returns FF_UNKNOWN, and InitCFGKernel then
+  // resets the active profile - wiping a LS-DYNA kernel loaded just before.
+  myStrFileFormatMap["radioss2612"] = FF_D00_2026;
   myStrFileFormatMap["D00_LAST"]   = FF_D00_LAST;
   myStrFileFormatMap["DYNA"]       = FF_DYNA;
   myStrFileFormatMap["Keyword970"]    = FF_971R4; 
@@ -275,6 +280,7 @@ void MvFileFormatMap_t::InitVersion2FormatMap() {
   myVersion2FormatMap["radioss2024"] = FF_D00_2024;
   myVersion2FormatMap["radioss2025"] = FF_D00_2025;
   myVersion2FormatMap["radioss2026"] = FF_D00_2026;
+  myVersion2FormatMap["radioss2612"] = FF_D00_2026;
 }
 
 
