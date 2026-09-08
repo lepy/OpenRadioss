@@ -432,6 +432,12 @@ void RadiossblkSetUserProfileVersion(unsigned int version)
     sUserProfileLoadedVersion = version;
 }
 
+extern "C" RADIOSSBLK_DECLS
+unsigned int RadiossblkGetUserProfileVersion()
+{
+    return sUserProfileLoadedVersion;
+}
+
 static hwReaderMessageList radiossblkmessages;
 
 static

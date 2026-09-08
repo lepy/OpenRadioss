@@ -99,6 +99,12 @@ enum MvFileFormat_s {
   FF_D00_2024,
   FF_D00_2025,
   FF_D00_2026,
+  // The starter's own code version (CODVERS 2612 in starter0.F) names a
+  // profile directory of its own, hm_cfg_files/config/CFG/radioss2612.
+  // It needs its own id: sharing FF_D00_2026 makes the reverse lookup
+  // report "radioss2026", and the search chain then starts one step too
+  // late, missing everything radioss2612 defines.
+  FF_D00_2612,
   FF_D00_LAST,
   /* Dyna subprofiles*/
   FF_DYNA,

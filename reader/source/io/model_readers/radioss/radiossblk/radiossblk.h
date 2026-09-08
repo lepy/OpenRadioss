@@ -53,6 +53,12 @@
 extern "C" RADIOSSBLK_DECLS
 void RadiossblkSetUserProfileVersion(unsigned int version);
 
+// The version the starter announced through RadiossblkSetUserProfileVersion.
+// Dyna2Rad stamps it into the /BEGIN card of the converted model, so that the
+// deck it produces declares the version the starter actually is.
+extern "C" RADIOSSBLK_DECLS
+unsigned int RadiossblkGetUserProfileVersion();
+
 // forward declaration
 namespace sdi
 {

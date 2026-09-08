@@ -25,6 +25,7 @@
 #include <dyna2rad/convertincludes.h>
 #include <dyna2rad/convertdefinetransform.h>
 #include <dyna2rad/dyna2rad.h>
+#include <radiossblk.h>
 
 using namespace std;
 using namespace sdi;
@@ -171,7 +172,7 @@ void sdiD2R::ConvertInclude::ConvertEntities()
             if (beginHandleEdit.IsValid())
             {
                 EntityEdit beginEdit(p_radiossModel, beginHandleEdit);   
-                beginEdit.SetValue(sdiIdentifier("Invers"), sdiValue(2026));
+                beginEdit.SetValue(sdiIdentifier("Invers"), sdiValue((int)RadiossblkGetUserProfileVersion()));
  
                 beginEdit.SetValue(sdiIdentifier("Input_length_unit"), sdiValue(sdiString(sFctLen)));
                 beginEdit.SetValue(sdiIdentifier("Input_time_unit"), sdiValue(sdiString(sFctTim)));
